@@ -13,10 +13,10 @@ import {
 } from './entity/user.entity'
 import { FindManyUserArgs, FindUniqueUserArgs } from './dtos/find.args'
 import {
-  // LoginInput,
-  // LoginOutput,
+  LoginInput,
+  LoginOutput,
   RegisterWithCredentialsInput,
-  // RegisterWithProviderInput,
+  RegisterWithProviderInput,
 } from './dtos/create-user.input'
 import { UpdateUserInput } from './dtos/update-user.input'
 import { checkRowLevelPermission } from 'src/common/auth/util'
@@ -35,25 +35,25 @@ export class UsersResolver {
     private readonly prisma: PrismaService,
   ) {}
 
-  // @Mutation(() => User)
-  // async registerWithCredentials(
-  //   @Args('registerWithCredentialsInput')
-  //   args: RegisterWithCredentialsInput,
-  // ) {
-  //   return this.usersService.registerWithCredentials(args)
-  // }
+  @Mutation(() => User)
+  async registerWithCredentials(
+    @Args('registerWithCredentialsInput')
+    args: RegisterWithCredentialsInput,
+  ) {
+    return this.usersService.registerWithCredentials(args)
+  }
 
-  // @Mutation(() => User)
-  // async registerWithProvider(
-  //   @Args('registerWithProviderInput') args: RegisterWithProviderInput,
-  // ) {
-  //   return this.usersService.registerWithProvider(args)
-  // }
+  @Mutation(() => User)
+  async registerWithProvider(
+    @Args('registerWithProviderInput') args: RegisterWithProviderInput,
+  ) {
+    return this.usersService.registerWithProvider(args)
+  }
 
-  // @Mutation(() => LoginOutput)
-  // async login(@Args('loginInput') args: LoginInput) {
-  //   return this.usersService.login(args)
-  // }
+  @Mutation(() => LoginOutput)
+  async login(@Args('loginInput') args: LoginInput) {
+    return this.usersService.login(args)
+  }
 
   @AllowAuthenticated()
   @Query(() => User)

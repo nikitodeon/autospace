@@ -8,44 +8,39 @@ import {
 import { User } from '../entity/user.entity'
 import { AuthProviderType } from '@prisma/client'
 
-//   registerEnumType(AuthProviderType, {
-//     name: 'AuthProviderType',
-//   })
+registerEnumType(AuthProviderType, {
+  name: 'AuthProviderType',
+})
 
-//   @InputType()
-//   export class RegisterWithProviderInput extends PickType(
-//     User,
-//     ['uid', 'name',
-//         //  'image'
-//         ],
-//     InputType,
-//   ) {
-//     // @Field(() => AuthProviderType)
-//     // type: AuthProviderType
-//   }
+@InputType()
+export class RegisterWithProviderInput extends PickType(
+  User,
+  ['uid', 'name', 'image'],
+  InputType,
+) {
+  @Field(() => AuthProviderType)
+  type: AuthProviderType
+}
 
 @InputType()
 export class RegisterWithCredentialsInput extends PickType(
   User,
-  [
-    'uid',
-    'name',
-    //  'image'
-  ],
+  ['uid', 'name', 'image'],
   InputType,
 ) {
-  // email: string
-  // password: string
+  email: string
+  password: string
+  name: string
 }
 
-//   @InputType()
-//   export class LoginInput extends PickType(RegisterWithCredentialsInput, [
-//     'email',
-//     'password',
-//   ]) {}
+@InputType()
+export class LoginInput extends PickType(RegisterWithCredentialsInput, [
+  'email',
+  'password',
+]) {}
 
-//   @ObjectType()
-//   export class LoginOutput {
-//     token: string
-//     user: User
-//   }
+@ObjectType()
+export class LoginOutput {
+  token: string
+  user: User
+}
