@@ -10,13 +10,19 @@ registerEnumType(Prisma.ManagerScalarFieldEnum, {
 
 @ArgsType()
 class FindManyManagerArgsStrict
-  implements RestrictProperties<FindManyManagerArgsStrict, Omit<Prisma.ManagerFindManyArgs, 'include' | 'select'>>
+  implements
+    RestrictProperties<
+      FindManyManagerArgsStrict,
+      Omit<Prisma.ManagerFindManyArgs, 'include' | 'select'>
+    >
 {
   where: ManagerWhereInput
   orderBy: ManagerOrderByWithRelationInput[]
   cursor: ManagerWhereUniqueInput
   take: number
   skip: number
+  @Field(() => [Prisma.UserScalarFieldEnum])
+  omit: any
   @Field(() => [Prisma.ManagerScalarFieldEnum])
   distinct: Prisma.ManagerScalarFieldEnum[]
 }

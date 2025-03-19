@@ -10,13 +10,19 @@ registerEnumType(Prisma.CustomerScalarFieldEnum, {
 
 @ArgsType()
 class FindManyCustomerArgsStrict
-  implements RestrictProperties<FindManyCustomerArgsStrict, Omit<Prisma.CustomerFindManyArgs, 'include' | 'select'>>
+  implements
+    RestrictProperties<
+      FindManyCustomerArgsStrict,
+      Omit<Prisma.CustomerFindManyArgs, 'include' | 'select'>
+    >
 {
   where: CustomerWhereInput
   orderBy: CustomerOrderByWithRelationInput[]
   cursor: CustomerWhereUniqueInput
   take: number
   skip: number
+  @Field(() => [Prisma.UserScalarFieldEnum])
+  omit: any
   @Field(() => [Prisma.CustomerScalarFieldEnum])
   distinct: Prisma.CustomerScalarFieldEnum[]
 }
