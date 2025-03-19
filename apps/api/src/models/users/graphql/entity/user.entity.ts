@@ -16,9 +16,9 @@ export class User implements RestrictProperties<User, UserType> {
   // @Field({ nullable: true })
 }
 
-// @ObjectType()
-// export class AuthProvider {
-//   uid: string
-//   @Field(() => $Enums.AuthProviderType)
-//   type: $Enums.AuthProviderType
-// }
+@ObjectType()
+export class AuthProvider {
+  uid: string
+  @Field(() => $Enums.AuthProviderType)
+  type: $Enums.AuthProviderType
+}
