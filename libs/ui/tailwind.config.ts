@@ -6,7 +6,7 @@ import {
   keyframesConfig,
 } from './src/styles/config'
 
-console.log('Загружаю конфиг из libs/ui...')
+// console.log('Загружаю конфиг из libs/ui...')
 
 const config: Config = {
   important: true,
@@ -33,6 +33,6 @@ const config: Config = {
   plugins: [],
 }
 
-console.log('Конфиг из libs/ui успешно загружен:', config)
+// console.log('Конфиг из libs/ui успешно загружен:', config)
 
 export default config
