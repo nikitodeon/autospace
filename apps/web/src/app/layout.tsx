@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-// import '@autospace/ui/src/app/globals.css'
+import '@autospace/ui/src/app/globals.css'
 import { ApolloProvider } from '@autospace/network/src/config/apollo'
 // import { SessionProvider } from '@autospace/ui/src/components/molecules/SessionProvider'
 // import { Header } from '@autospace/ui/src/components/organisms/Header'
@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       {/* <SessionProvider> */}
       <ApolloProvider>
-        <body className={`${inter.className} bg-gray-25`}>
+        <body className={`${inter.className} bg-gray-25 test-class`}>
           {/* <Header menuItems={MENUITEMS} />
             <Container>*/}
           {children}
