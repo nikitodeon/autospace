@@ -652,7 +652,7 @@ type Query {
   valetPickupsTotal: Int!
   valetDrops(take: Int, skip: Int): [Booking!]!
   valetDropsTotal: Int!
-  companies(omit: [UserScalarFieldEnum!], distinct: [CompanyScalarFieldEnum!], where: CompanyWhereInput, orderBy: [CompanyOrderByWithRelationInput!], cursor: CompanyWhereUniqueInput, take: Int, skip: Int): [Company!]!
+  companies(distinct: [CompanyScalarFieldEnum!], where: CompanyWhereInput, orderBy: [CompanyOrderByWithRelationInput!], cursor: CompanyWhereUniqueInput, take: Int, skip: Int): [Company!]!
   myCompany: Company!
   company(where: CompanyWhereUniqueInput!): Company!
   garages(omit: [UserScalarFieldEnum!], distinct: [GarageScalarFieldEnum!], where: GarageWhereInput, orderBy: [GarageOrderByWithRelationInput!], cursor: GarageWhereUniqueInput, take: Int, skip: Int): [Garage!]!

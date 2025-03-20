@@ -1,5 +1,5 @@
 {
-  "name": "network",
+  "name": "@autospace/network",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -7,5 +7,11 @@
     "@graphql-codegen/cli": "^5.0.5",
     "@graphql-codegen/named-operations-object": "^3.1.0",
     "@graphql-codegen/typed-document-node": "^5.1.0"
+  },
+  "scripts": {
+    "codegen": "graphql-codegen --config codegen.ts"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.13.4"
   }
 }

@@ -20,7 +20,10 @@ export class AuthGuard implements CanActivate {
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const ctx = GqlExecutionContext.create(context)
     const req = ctx.getContext().req
-
+    console.log(
+      'Request context:///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////',
+      req,
+    )
     await this.authenticateUser(req)
 
     return this.authorizeUser(req, context)
@@ -29,8 +32,9 @@ export class AuthGuard implements CanActivate {
   private async authenticateUser(req: any): Promise<void> {
     const bearerHeader = req.headers.authorization
     // Bearer eylskfdjlsdf309
+    console.log('Bearer header:', bearerHeader)
     const token = bearerHeader?.split(' ')[1]
-
+    console.log('Extracted token:', token)
     if (!token) {
       throw new UnauthorizedException('No token provided.')
     }

@@ -13,7 +13,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "next": "15.2.3",
-    "@autospace/sample-lib": "*"
+    "@autospace/sample-lib": "*",
+    "@autospace/network": "*"
   },
   "devDependencies": {
     "typescript": "^5",
