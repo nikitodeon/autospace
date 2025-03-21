@@ -31,9 +31,9 @@ export default function Home() {
       },
     },
   })
-  if (error) {
-    console.error('Ошибка при загрузке гаражей:', error)
-  }
+  // if (error) {
+  //   console.error('Ошибка при загрузке гаражей:', error)
+  // }
   console.log(data?.companies)
   const { data: sessionData, status } = useSession()
   // console.log('Доступные цвета в Tailwind:', colorsConfig)
@@ -53,7 +53,7 @@ export default function Home() {
   })
 
   return (
-    <main className="h-[calc(100vh-4rem)]         bg-primaryk  ">
+    <main className="h-[calc(100vh-4rem)]          bg-primaryk  ">
       {sessionData?.user?.uid ? (
         <Button onClick={() => signOut()}>Signout</Button>
       ) : (

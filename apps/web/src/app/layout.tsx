@@ -30,7 +30,9 @@ export default function RootLayout({
         <ApolloProvider>
           <body className={`${inter.className} bg-gray-25 test-class`}>
             <Header menuItems={MENUITEMS} />
-            <Container>{children}</Container>
+            {/* <Container> */}
+            {children}
+            {/* </Container> */}
             {/*  <ToastContainer /> */}
           </body>
         </ApolloProvider>

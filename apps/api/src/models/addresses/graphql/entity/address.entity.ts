@@ -8,6 +8,7 @@ export class Address implements RestrictProperties<Address, AddressType> {
   createdAt: Date
   updatedAt: Date
   address: string
+  // @Field(()=>Float)
   lat: number
   lng: number
   @Field({ nullable: true })
