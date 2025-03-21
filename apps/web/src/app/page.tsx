@@ -12,15 +12,23 @@ import { add } from '@autospace/sample-lib'
 import config2 from '@autospace/web/tailwind.config'
 import { BrandIcon } from '@autospace/ui/src/components/atoms/BrandIcon'
 import { Button } from '@autospace/ui/src/components/atoms/Button'
+import { useSession, signOut } from 'next-auth/react'
+import Link from 'next/link'
 // Проверим, какие конфиги загружаются
 // console.log('Конфиг 1 из @autospace/ui/tailwind.config:', config1)
 // console.log('Конфиг 2 из другого tailwind.config:', config2)
 export default function Home() {
   const { data, loading } = useQuery(CompaniesDocument)
   console.log(data?.companies)
+  const { data: sessionData, status } = useSession()
   // console.log('Доступные цвета в Tailwind:', colorsConfig)
   return (
     <main className="h-[calc(100vh-4rem)]         bg-primaryk  ">
+      {sessionData?.user?.uid ? (
+        <Button onClick={() => signOut()}>Signout</Button>
+      ) : (
+        <Link href="/login">Login</Link>
+      )}
       <BrandIcon />
       <Button />
       Hello {add(343, 2)}

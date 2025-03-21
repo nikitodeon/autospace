@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@autospace/ui/src/app/globals.css'
 import { ApolloProvider } from '@autospace/network/src/config/apollo'
-// import { SessionProvider } from '@autospace/ui/src/components/molecules/SessionProvider'
+import { SessionProvider } from '@autospace/ui/src/components/molecules/SessionProvider'
 // import { Header } from '@autospace/ui/src/components/organisms/Header'
 // import { ToastContainer } from '@autospace/ui/src/components/molecules/Toast'
 // import { MenuItem } from '@autospace/util/types'
@@ -26,17 +26,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <SessionProvider> */}
-      <ApolloProvider>
-        <body className={`${inter.className} bg-gray-25 test-class`}>
-          {/* <Header menuItems={MENUITEMS} />
+      <SessionProvider>
+        <ApolloProvider>
+          <body className={`${inter.className} bg-gray-25 test-class`}>
+            {/* <Header menuItems={MENUITEMS} />
             <Container>*/}
-          {children}
-          {/* </Container>
+            {children}
+            {/* </Container>
             <ToastContainer /> */}
-        </body>
-      </ApolloProvider>
-      {/* </SessionProvider> */}
+          </body>
+        </ApolloProvider>
+      </SessionProvider>
     </html>
   )
 }
