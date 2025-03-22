@@ -1,12 +1,12 @@
 @import '../components/organisms/map/map.css';
 
-/* @import 'react-toastify/dist/ReactToastify.css'; */
+@import 'react-toastify/dist/ReactToastify.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* .Toastify__toast {
+.Toastify__toast {
   @apply rounded-none font-sans shadow-lg;
 }
 
@@ -14,8 +14,8 @@
   background: #000;
   @apply rounded-none;
 }
-*/
-/* .bg-checker {
+
+.bg-checker {
   background-image:
     linear-gradient(45deg, #000 25%, transparent 25%),
     linear-gradient(-45deg, #000 25%, transparent 25%),
@@ -27,4 +27,4 @@
     0 8px,
     8px -8px,
     -8px 0px;
-} */
+}

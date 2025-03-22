@@ -652,7 +652,7 @@ type Query {
   valetPickupsTotal: Float!
   valetDrops(take: Float, skip: Float): [Booking!]!
   valetDropsTotal: Float!
-  companies(distinct: [CompanyScalarFieldEnum!], where: CompanyWhereInput, orderBy: [CompanyOrderByWithRelationInput!], cursor: CompanyWhereUniqueInput, take: Float, skip: Float): [Company!]!
+  companies(where: CompanyWhereInput, orderBy: [CompanyOrderByWithRelationInput!], cursor: CompanyWhereUniqueInput, take: Int, skip: Int, distinct: [CompanyScalarFieldEnum!]): [Company!]!
   myCompany: Company!
   company(where: CompanyWhereUniqueInput!): Company!
   garages(omit: [UserScalarFieldEnum!], distinct: [GarageScalarFieldEnum!], where: GarageWhereInput, orderBy: [GarageOrderByWithRelationInput!], cursor: GarageWhereUniqueInput, take: Float, skip: Float): [Garage!]!
@@ -663,10 +663,10 @@ type Query {
   address(where: AddressWhereUniqueInput!): Address!
   slots(omit: [UserScalarFieldEnum!], distinct: [SlotScalarFieldEnum!], where: SlotWhereInput, orderBy: [SlotOrderByWithRelationInput!], cursor: SlotWhereUniqueInput, take: Float, skip: Float): [Slot!]!
   slot(where: SlotWhereUniqueInput!): Slot!
-  bookings(omit: [UserScalarFieldEnum!], distinct: [BookingScalarFieldEnum!], where: BookingWhereInput, orderBy: [BookingOrderByWithRelationInput!], cursor: BookingWhereUniqueInput, take: Float, skip: Float): [Booking!]!
-  bookingsForValet(omit: [UserScalarFieldEnum!], distinct: [BookingScalarFieldEnum!], where: BookingWhereInput, orderBy: [BookingOrderByWithRelationInput!], cursor: BookingWhereUniqueInput, take: Float, skip: Float): [Booking!]!
-  bookingsForCustomer(omit: [UserScalarFieldEnum!], distinct: [BookingScalarFieldEnum!], where: BookingWhereInput, orderBy: [BookingOrderByWithRelationInput!], cursor: BookingWhereUniqueInput, take: Float, skip: Float): [Booking!]!
-  bookingsForGarage(omit: [UserScalarFieldEnum!], distinct: [BookingScalarFieldEnum!], where: BookingWhereInput, orderBy: [BookingOrderByWithRelationInput!], cursor: BookingWhereUniqueInput, take: Float, skip: Float): [Booking!]!
+  bookings(where: BookingWhereInput, orderBy: [BookingOrderByWithRelationInput!], cursor: BookingWhereUniqueInput, take: Int, skip: Int, distinct: [BookingScalarFieldEnum!]): [Booking!]!
+  bookingsForValet(where: BookingWhereInput, orderBy: [BookingOrderByWithRelationInput!], cursor: BookingWhereUniqueInput, take: Int, skip: Int, distinct: [BookingScalarFieldEnum!]): [Booking!]!
+  bookingsForCustomer(where: BookingWhereInput, orderBy: [BookingOrderByWithRelationInput!], cursor: BookingWhereUniqueInput, take: Int, skip: Int, distinct: [BookingScalarFieldEnum!]): [Booking!]!
+  bookingsForGarage(where: BookingWhereInput, orderBy: [BookingOrderByWithRelationInput!], cursor: BookingWhereUniqueInput, take: Int, skip: Int, distinct: [BookingScalarFieldEnum!]): [Booking!]!
   bookingsCount(where: BookingWhereInput): AggregateCountOutput!
   booking(where: BookingWhereUniqueInput!): Booking!
   valetAssignments(omit: [UserScalarFieldEnum!], distinct: [ValetAssignmentScalarFieldEnum!], where: ValetAssignmentWhereInput, orderBy: [ValetAssignmentOrderByWithRelationInput!], cursor: ValetAssignmentWhereUniqueInput, take: Float, skip: Float): [ValetAssignment!]!
@@ -840,16 +840,16 @@ input ValetWhereUniqueInput {
   uid: String!
 }
 
+input CompanyWhereUniqueInput {
+  id: Float!
+}
+
 enum CompanyScalarFieldEnum {
   id
   createdAt
   updatedAt
   displayName
   description
-}
-
-input CompanyWhereUniqueInput {
-  id: Float!
 }
 
 enum GarageScalarFieldEnum {
@@ -966,22 +966,6 @@ input SlotWhereUniqueInput {
   id: Float!
 }
 
-enum BookingScalarFieldEnum {
-  id
-  createdAt
-  updatedAt
-  pricePerHour
-  totalPrice
-  startTime
-  endTime
-  vehicleNumber
-  phoneNumber
-  passcode
-  status
-  slotId
-  customerId
-}
-
 input BookingOrderByWithRelationInput {
   id: SortOrder
   createdAt: SortOrder
@@ -1019,6 +1003,22 @@ input ValetAssignmentOrderByWithRelationInput {
 
 input BookingWhereUniqueInput {
   id: Float!
+}
+
+enum BookingScalarFieldEnum {
+  id
+  createdAt
+  updatedAt
+  pricePerHour
+  totalPrice
+  startTime
+  endTime
+  vehicleNumber
+  phoneNumber
+  passcode
+  status
+  slotId
+  customerId
 }
 
 enum ValetAssignmentScalarFieldEnum {

@@ -22,10 +22,10 @@ export type Address = {
   address: Scalars['String']['output'];
   createdAt: Scalars['DateTime']['output'];
   garage?: Maybe<Garage>;
-  garageId?: Maybe<Scalars['Int']['output']>;
-  id: Scalars['Int']['output'];
-  lat: Scalars['Int']['output'];
-  lng: Scalars['Int']['output'];
+  garageId?: Maybe<Scalars['Float']['output']>;
+  id: Scalars['Float']['output'];
+  lat: Scalars['Float']['output'];
+  lng: Scalars['Float']['output'];
   updatedAt: Scalars['DateTime']['output'];
 };
 
@@ -70,7 +70,7 @@ export type AddressWhereInput = {
 };
 
 export type AddressWhereUniqueInput = {
-  id: Scalars['Int']['input'];
+  id: Scalars['Float']['input'];
 };
 
 export type Admin = {
@@ -80,7 +80,7 @@ export type Admin = {
   updatedAt: Scalars['DateTime']['output'];
   user?: Maybe<User>;
   verifications: Array<Verification>;
-  verificationsCount: Scalars['Int']['output'];
+  verificationsCount: Scalars['Float']['output'];
 };
 
 export type AdminOrderByWithRelationInput = {
@@ -119,7 +119,7 @@ export type AdminWhereUniqueInput = {
 
 export type AggregateCountOutput = {
   __typename?: 'AggregateCountOutput';
-  count: Scalars['Int']['output'];
+  count: Scalars['Float']['output'];
 };
 
 export type AuthProvider = {
@@ -140,15 +140,15 @@ export type Booking = {
   customer: Customer;
   customerId: Scalars['String']['output'];
   endTime: Scalars['DateTime']['output'];
-  id: Scalars['Int']['output'];
+  id: Scalars['Float']['output'];
   passcode?: Maybe<Scalars['String']['output']>;
   phoneNumber?: Maybe<Scalars['String']['output']>;
-  pricePerHour?: Maybe<Scalars['Int']['output']>;
+  pricePerHour?: Maybe<Scalars['Float']['output']>;
   slot: Slot;
-  slotId: Scalars['Int']['output'];
+  slotId: Scalars['Float']['output'];
   startTime: Scalars['DateTime']['output'];
   status: BookingStatus;
-  totalPrice?: Maybe<Scalars['Int']['output']>;
+  totalPrice?: Maybe<Scalars['Float']['output']>;
   updatedAt: Scalars['DateTime']['output'];
   valetAssignment?: Maybe<ValetAssignment>;
   vehicleNumber: Scalars['String']['output'];
@@ -217,8 +217,8 @@ export enum BookingStatus {
 
 export type BookingTimeline = {
   __typename?: 'BookingTimeline';
-  bookingId: Scalars['Int']['output'];
-  id: Scalars['Int']['output'];
+  bookingId: Scalars['Float']['output'];
+  id: Scalars['Float']['output'];
   managerId?: Maybe<Scalars['String']['output']>;
   status: BookingStatus;
   timestamp: Scalars['DateTime']['output'];
@@ -272,7 +272,7 @@ export type BookingTimelineWhereInput = {
 };
 
 export type BookingTimelineWhereUniqueInput = {
-  id: Scalars['Int']['input'];
+  id: Scalars['Float']['input'];
 };
 
 export type BookingWhereInput = {
@@ -299,7 +299,7 @@ export type BookingWhereInput = {
 };
 
 export type BookingWhereUniqueInput = {
-  id: Scalars['Int']['input'];
+  id: Scalars['Float']['input'];
 };
 
 export type BoolFilter = {
@@ -313,7 +313,7 @@ export type Company = {
   description?: Maybe<Scalars['String']['output']>;
   displayName?: Maybe<Scalars['String']['output']>;
   garages: Array<Garage>;
-  id: Scalars['Int']['output'];
+  id: Scalars['Float']['output'];
   managers: Array<Manager>;
   updatedAt: Scalars['DateTime']['output'];
 };
@@ -357,20 +357,20 @@ export type CompanyWhereInput = {
 };
 
 export type CompanyWhereUniqueInput = {
-  id: Scalars['Int']['input'];
+  id: Scalars['Float']['input'];
 };
 
 export type CreateAddressInput = {
   address: Scalars['String']['input'];
-  garageId?: InputMaybe<Scalars['Int']['input']>;
-  lat: Scalars['Int']['input'];
-  lng: Scalars['Int']['input'];
+  garageId?: InputMaybe<Scalars['Float']['input']>;
+  lat: Scalars['Float']['input'];
+  lng: Scalars['Float']['input'];
 };
 
 export type CreateAddressInputWithoutGarageId = {
   address: Scalars['String']['input'];
-  lat: Scalars['Int']['input'];
-  lng: Scalars['Int']['input'];
+  lat: Scalars['Float']['input'];
+  lng: Scalars['Float']['input'];
 };
 
 export type CreateAdminInput = {
@@ -380,7 +380,7 @@ export type CreateAdminInput = {
 export type CreateBookingInput = {
   customerId: Scalars['String']['input'];
   endTime: Scalars['DateTime']['input'];
-  garageId: Scalars['Int']['input'];
+  garageId: Scalars['Float']['input'];
   phoneNumber?: InputMaybe<Scalars['String']['input']>;
   pricePerHour?: InputMaybe<Scalars['Float']['input']>;
   startTime: Scalars['DateTime']['input'];
@@ -391,7 +391,7 @@ export type CreateBookingInput = {
 };
 
 export type CreateBookingTimelineInput = {
-  bookingId: Scalars['Int']['input'];
+  bookingId: Scalars['Float']['input'];
   status: BookingStatus;
 };
 
@@ -423,49 +423,49 @@ export type CreateManagerInput = {
 export type CreateReviewInput = {
   comment?: InputMaybe<Scalars['String']['input']>;
   customerId: Scalars['String']['input'];
-  garageId: Scalars['Int']['input'];
-  rating: Scalars['Int']['input'];
+  garageId: Scalars['Float']['input'];
+  rating: Scalars['Float']['input'];
 };
 
 export type CreateSlotInput = {
   displayName?: InputMaybe<Scalars['String']['input']>;
-  garageId: Scalars['Int']['input'];
-  height?: InputMaybe<Scalars['Int']['input']>;
-  length?: InputMaybe<Scalars['Int']['input']>;
-  pricePerHour: Scalars['Int']['input'];
+  garageId: Scalars['Float']['input'];
+  height?: InputMaybe<Scalars['Float']['input']>;
+  length?: InputMaybe<Scalars['Float']['input']>;
+  pricePerHour: Scalars['Float']['input'];
   type: SlotType;
-  width?: InputMaybe<Scalars['Int']['input']>;
+  width?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type CreateSlotInputWithoutGarageId = {
-  count: Scalars['Int']['input'];
+  count: Scalars['Float']['input'];
   displayName?: InputMaybe<Scalars['String']['input']>;
-  height?: InputMaybe<Scalars['Int']['input']>;
-  length?: InputMaybe<Scalars['Int']['input']>;
-  pricePerHour: Scalars['Int']['input'];
+  height?: InputMaybe<Scalars['Float']['input']>;
+  length?: InputMaybe<Scalars['Float']['input']>;
+  pricePerHour: Scalars['Float']['input'];
   type: SlotType;
-  width?: InputMaybe<Scalars['Int']['input']>;
+  width?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type CreateValetAssignmentInput = {
-  bookingId: Scalars['Int']['input'];
-  pickupLat: Scalars['Int']['input'];
-  pickupLng: Scalars['Int']['input'];
+  bookingId: Scalars['Float']['input'];
+  pickupLat: Scalars['Float']['input'];
+  pickupLng: Scalars['Float']['input'];
   pickupValetId?: InputMaybe<Scalars['String']['input']>;
-  returnLat?: InputMaybe<Scalars['Int']['input']>;
-  returnLng?: InputMaybe<Scalars['Int']['input']>;
+  returnLat?: InputMaybe<Scalars['Float']['input']>;
+  returnLng?: InputMaybe<Scalars['Float']['input']>;
   returnValetId?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type CreateValetAssignmentInputWithoutBookingId = {
-  pickupLat: Scalars['Int']['input'];
-  pickupLng: Scalars['Int']['input'];
-  returnLat?: InputMaybe<Scalars['Int']['input']>;
-  returnLng?: InputMaybe<Scalars['Int']['input']>;
+  pickupLat: Scalars['Float']['input'];
+  pickupLng: Scalars['Float']['input'];
+  returnLat?: InputMaybe<Scalars['Float']['input']>;
+  returnLng?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type CreateValetInput = {
-  companyId?: InputMaybe<Scalars['Int']['input']>;
+  companyId?: InputMaybe<Scalars['Float']['input']>;
   displayName: Scalars['String']['input'];
   image?: InputMaybe<Scalars['String']['input']>;
   licenceID: Scalars['String']['input'];
@@ -473,7 +473,7 @@ export type CreateValetInput = {
 };
 
 export type CreateVerificationInput = {
-  garageId: Scalars['Int']['input'];
+  garageId: Scalars['Float']['input'];
   verified: Scalars['Boolean']['input'];
 };
 
@@ -556,12 +556,12 @@ export type EnumSlotTypeFilter = {
 };
 
 export type FloatFilter = {
-  equals?: InputMaybe<Scalars['Int']['input']>;
-  gt?: InputMaybe<Scalars['Int']['input']>;
-  gte?: InputMaybe<Scalars['Int']['input']>;
-  lt?: InputMaybe<Scalars['Int']['input']>;
-  lte?: InputMaybe<Scalars['Int']['input']>;
-  not?: InputMaybe<Scalars['Int']['input']>;
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  gt?: InputMaybe<Scalars['Float']['input']>;
+  gte?: InputMaybe<Scalars['Float']['input']>;
+  lt?: InputMaybe<Scalars['Float']['input']>;
+  lte?: InputMaybe<Scalars['Float']['input']>;
+  not?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Garage = {
@@ -569,11 +569,11 @@ export type Garage = {
   address?: Maybe<Address>;
   availableSlots: Array<MinimalSlotGroupBy>;
   company: Company;
-  companyId: Scalars['Int']['output'];
+  companyId: Scalars['Float']['output'];
   createdAt: Scalars['DateTime']['output'];
   description?: Maybe<Scalars['String']['output']>;
   displayName?: Maybe<Scalars['String']['output']>;
-  id: Scalars['Int']['output'];
+  id: Scalars['Float']['output'];
   images: Array<Scalars['String']['output']>;
   slotCounts: Array<SlotTypeCount>;
   slots: Array<Slot>;
@@ -589,8 +589,8 @@ export type GarageAvailableSlotsArgs = {
 
 export type GarageFilter = {
   orderBy?: InputMaybe<Array<GarageOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<GarageWhereInput>;
 };
 
@@ -653,15 +653,15 @@ export type GarageWhereInput = {
 };
 
 export type GarageWhereUniqueInput = {
-  id: Scalars['Int']['input'];
+  id: Scalars['Float']['input'];
 };
 
 export type IntFilter = {
-  equals?: InputMaybe<Scalars['Int']['input']>;
-  gt?: InputMaybe<Scalars['Int']['input']>;
-  gte?: InputMaybe<Scalars['Int']['input']>;
-  lt?: InputMaybe<Scalars['Int']['input']>;
-  lte?: InputMaybe<Scalars['Int']['input']>;
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  gt?: InputMaybe<Scalars['Float']['input']>;
+  gte?: InputMaybe<Scalars['Float']['input']>;
+  lt?: InputMaybe<Scalars['Float']['input']>;
+  lte?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type LocationFilterInput = {
@@ -685,7 +685,7 @@ export type LoginOutput = {
 export type Manager = {
   __typename?: 'Manager';
   company?: Maybe<Company>;
-  companyId: Scalars['Int']['output'];
+  companyId: Scalars['Float']['output'];
   createdAt: Scalars['DateTime']['output'];
   displayName?: Maybe<Scalars['String']['output']>;
   uid: Scalars['String']['output'];
@@ -746,8 +746,8 @@ export type ManagerWhereUniqueInput = {
 
 export type MinimalSlotGroupBy = {
   __typename?: 'MinimalSlotGroupBy';
-  count: Scalars['Int']['output'];
-  pricePerHour: Scalars['Int']['output'];
+  count: Scalars['Float']['output'];
+  pricePerHour: Scalars['Float']['output'];
   type: SlotType;
 };
 
@@ -803,7 +803,7 @@ export type Mutation = {
 
 
 export type MutationAssignValetArgs = {
-  bookingId: Scalars['Int']['input'];
+  bookingId: Scalars['Float']['input'];
   status: Scalars['String']['input'];
 };
 
@@ -849,7 +849,7 @@ export type MutationCreateManagerArgs = {
 
 
 export type MutationCreateManySlotsArgs = {
-  count: Scalars['Int']['input'];
+  count: Scalars['Float']['input'];
   createSlotInput: CreateSlotInput;
 };
 
@@ -1040,7 +1040,7 @@ export type Query = {
   admin: Admin;
   adminMe: Admin;
   admins: Array<Admin>;
-  adminsCount: Scalars['Int']['output'];
+  adminsCount: Scalars['Float']['output'];
   booking: Booking;
   bookingTimeline: BookingTimeline;
   bookingTimelines: Array<BookingTimeline>;
@@ -1052,7 +1052,7 @@ export type Query = {
   companies: Array<Company>;
   company: Company;
   companyValets: Array<Valet>;
-  companyValetsTotal: Scalars['Int']['output'];
+  companyValetsTotal: Scalars['Float']['output'];
   customer: Customer;
   customers: Array<Customer>;
   garage: Garage;
@@ -1073,10 +1073,10 @@ export type Query = {
   valetAssignment: ValetAssignment;
   valetAssignments: Array<ValetAssignment>;
   valetDrops: Array<Booking>;
-  valetDropsTotal: Scalars['Int']['output'];
+  valetDropsTotal: Scalars['Float']['output'];
   valetMe?: Maybe<Valet>;
   valetPickups: Array<Booking>;
-  valetPickupsTotal: Scalars['Int']['output'];
+  valetPickupsTotal: Scalars['Float']['output'];
   valets: Array<Valet>;
   verification: Verification;
   verifications: Array<Verification>;
@@ -1094,8 +1094,8 @@ export type QueryAddressesArgs = {
   distinct?: InputMaybe<Array<AddressScalarFieldEnum>>;
   omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<AddressOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<AddressWhereInput>;
 };
 
@@ -1110,8 +1110,8 @@ export type QueryAdminsArgs = {
   distinct?: InputMaybe<Array<AdminScalarFieldEnum>>;
   omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<AdminOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<AdminWhereInput>;
 };
 
@@ -1136,8 +1136,8 @@ export type QueryBookingTimelinesArgs = {
   distinct?: InputMaybe<Array<BookingTimelineScalarFieldEnum>>;
   omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<BookingTimelineOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<BookingTimelineWhereInput>;
 };
 
@@ -1145,7 +1145,6 @@ export type QueryBookingTimelinesArgs = {
 export type QueryBookingsArgs = {
   cursor?: InputMaybe<BookingWhereUniqueInput>;
   distinct?: InputMaybe<Array<BookingScalarFieldEnum>>;
-  omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<BookingOrderByWithRelationInput>>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   take?: InputMaybe<Scalars['Int']['input']>;
@@ -1161,7 +1160,6 @@ export type QueryBookingsCountArgs = {
 export type QueryBookingsForCustomerArgs = {
   cursor?: InputMaybe<BookingWhereUniqueInput>;
   distinct?: InputMaybe<Array<BookingScalarFieldEnum>>;
-  omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<BookingOrderByWithRelationInput>>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   take?: InputMaybe<Scalars['Int']['input']>;
@@ -1172,7 +1170,6 @@ export type QueryBookingsForCustomerArgs = {
 export type QueryBookingsForGarageArgs = {
   cursor?: InputMaybe<BookingWhereUniqueInput>;
   distinct?: InputMaybe<Array<BookingScalarFieldEnum>>;
-  omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<BookingOrderByWithRelationInput>>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   take?: InputMaybe<Scalars['Int']['input']>;
@@ -1183,7 +1180,6 @@ export type QueryBookingsForGarageArgs = {
 export type QueryBookingsForValetArgs = {
   cursor?: InputMaybe<BookingWhereUniqueInput>;
   distinct?: InputMaybe<Array<BookingScalarFieldEnum>>;
-  omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<BookingOrderByWithRelationInput>>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   take?: InputMaybe<Scalars['Int']['input']>;
@@ -1211,8 +1207,8 @@ export type QueryCompanyValetsArgs = {
   distinct?: InputMaybe<Array<ValetScalarFieldEnum>>;
   omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<ValetOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<ValetWhereInput>;
 };
 
@@ -1232,8 +1228,8 @@ export type QueryCustomersArgs = {
   distinct?: InputMaybe<Array<CustomerScalarFieldEnum>>;
   omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<CustomerOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<CustomerWhereInput>;
 };
 
@@ -1248,8 +1244,8 @@ export type QueryGaragesArgs = {
   distinct?: InputMaybe<Array<GarageScalarFieldEnum>>;
   omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<GarageOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<GarageWhereInput>;
 };
 
@@ -1274,8 +1270,8 @@ export type QueryManagersArgs = {
   distinct?: InputMaybe<Array<ManagerScalarFieldEnum>>;
   omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<ManagerOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<ManagerWhereInput>;
 };
 
@@ -1290,8 +1286,8 @@ export type QueryReviewsArgs = {
   distinct?: InputMaybe<Array<ReviewScalarFieldEnum>>;
   omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<ReviewOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<ReviewWhereInput>;
 };
 
@@ -1314,8 +1310,8 @@ export type QuerySlotsArgs = {
   distinct?: InputMaybe<Array<SlotScalarFieldEnum>>;
   omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<SlotOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<SlotWhereInput>;
 };
 
@@ -1330,8 +1326,8 @@ export type QueryUsersArgs = {
   distinct?: InputMaybe<Array<UserScalarFieldEnum>>;
   omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<UserOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<UserWhereInput>;
 };
 
@@ -1351,21 +1347,21 @@ export type QueryValetAssignmentsArgs = {
   distinct?: InputMaybe<Array<ValetAssignmentScalarFieldEnum>>;
   omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<ValetAssignmentOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<ValetAssignmentWhereInput>;
 };
 
 
 export type QueryValetDropsArgs = {
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
 };
 
 
 export type QueryValetPickupsArgs = {
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
 };
 
 
@@ -1374,8 +1370,8 @@ export type QueryValetsArgs = {
   distinct?: InputMaybe<Array<ValetScalarFieldEnum>>;
   omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<ValetOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<ValetWhereInput>;
 };
 
@@ -1390,8 +1386,8 @@ export type QueryVerificationsArgs = {
   distinct?: InputMaybe<Array<VerificationScalarFieldEnum>>;
   omit?: InputMaybe<Array<UserScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<VerificationOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  take?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
   where?: InputMaybe<VerificationWhereInput>;
 };
 
@@ -1417,7 +1413,7 @@ export type RegisterWithProviderInput = {
 
 export type ReturnCount = {
   __typename?: 'ReturnCount';
-  count: Scalars['Int']['output'];
+  count: Scalars['Float']['output'];
 };
 
 export type Review = {
@@ -1425,9 +1421,9 @@ export type Review = {
   comment?: Maybe<Scalars['String']['output']>;
   createdAt: Scalars['DateTime']['output'];
   customerId: Scalars['String']['output'];
-  garageId: Scalars['Int']['output'];
-  id: Scalars['Int']['output'];
-  rating: Scalars['Int']['output'];
+  garageId: Scalars['Float']['output'];
+  id: Scalars['Float']['output'];
+  rating: Scalars['Float']['output'];
   updatedAt: Scalars['DateTime']['output'];
 };
 
@@ -1479,7 +1475,7 @@ export type ReviewWhereInput = {
 };
 
 export type ReviewWhereUniqueInput = {
-  id: Scalars['Int']['input'];
+  id: Scalars['Float']['input'];
 };
 
 export type Slot = {
@@ -1488,14 +1484,14 @@ export type Slot = {
   createdAt: Scalars['DateTime']['output'];
   displayName?: Maybe<Scalars['String']['output']>;
   garage: Garage;
-  garageId: Scalars['Int']['output'];
-  height?: Maybe<Scalars['Int']['output']>;
-  id: Scalars['Int']['output'];
-  length?: Maybe<Scalars['Int']['output']>;
-  pricePerHour: Scalars['Int']['output'];
+  garageId: Scalars['Float']['output'];
+  height?: Maybe<Scalars['Float']['output']>;
+  id: Scalars['Float']['output'];
+  length?: Maybe<Scalars['Float']['output']>;
+  pricePerHour: Scalars['Float']['output'];
   type: SlotType;
   updatedAt: Scalars['DateTime']['output'];
-  width?: Maybe<Scalars['Int']['output']>;
+  width?: Maybe<Scalars['Float']['output']>;
 };
 
 export type SlotListRelationFilter = {
@@ -1550,7 +1546,7 @@ export enum SlotType {
 
 export type SlotTypeCount = {
   __typename?: 'SlotTypeCount';
-  count?: Maybe<Scalars['Int']['output']>;
+  count?: Maybe<Scalars['Float']['output']>;
   type: SlotType;
 };
 
@@ -1573,7 +1569,7 @@ export type SlotWhereInput = {
 };
 
 export type SlotWhereUniqueInput = {
-  id: Scalars['Int']['input'];
+  id: Scalars['Float']['input'];
 };
 
 export enum SortOrder {
@@ -1606,10 +1602,10 @@ export type StringListFilter = {
 
 export type UpdateAddressInput = {
   address?: InputMaybe<Scalars['String']['input']>;
-  garageId?: InputMaybe<Scalars['Int']['input']>;
-  id: Scalars['Int']['input'];
-  lat?: InputMaybe<Scalars['Int']['input']>;
-  lng?: InputMaybe<Scalars['Int']['input']>;
+  garageId?: InputMaybe<Scalars['Float']['input']>;
+  id: Scalars['Float']['input'];
+  lat?: InputMaybe<Scalars['Float']['input']>;
+  lng?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type UpdateAdminInput = {
@@ -1619,8 +1615,8 @@ export type UpdateAdminInput = {
 export type UpdateBookingInput = {
   customerId?: InputMaybe<Scalars['String']['input']>;
   endTime?: InputMaybe<Scalars['DateTime']['input']>;
-  garageId?: InputMaybe<Scalars['Int']['input']>;
-  id: Scalars['Int']['input'];
+  garageId?: InputMaybe<Scalars['Float']['input']>;
+  id: Scalars['Float']['input'];
   phoneNumber?: InputMaybe<Scalars['String']['input']>;
   pricePerHour?: InputMaybe<Scalars['Float']['input']>;
   startTime?: InputMaybe<Scalars['DateTime']['input']>;
@@ -1631,15 +1627,15 @@ export type UpdateBookingInput = {
 };
 
 export type UpdateBookingTimelineInput = {
-  bookingId?: InputMaybe<Scalars['Int']['input']>;
-  id: Scalars['Int']['input'];
+  bookingId?: InputMaybe<Scalars['Float']['input']>;
+  id: Scalars['Float']['input'];
   status?: InputMaybe<BookingStatus>;
 };
 
 export type UpdateCompanyInput = {
   description?: InputMaybe<Scalars['String']['input']>;
   displayName?: InputMaybe<Scalars['String']['input']>;
-  id: Scalars['Int']['input'];
+  id: Scalars['Float']['input'];
   managerId?: InputMaybe<Scalars['String']['input']>;
   managerName?: InputMaybe<Scalars['String']['input']>;
 };
@@ -1654,7 +1650,7 @@ export type UpdateGarageInput = {
   Slots?: InputMaybe<Array<CreateSlotInputWithoutGarageId>>;
   description?: InputMaybe<Scalars['String']['input']>;
   displayName?: InputMaybe<Scalars['String']['input']>;
-  id: Scalars['Int']['input'];
+  id: Scalars['Float']['input'];
   images?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
@@ -1666,20 +1662,20 @@ export type UpdateManagerInput = {
 export type UpdateReviewInput = {
   comment?: InputMaybe<Scalars['String']['input']>;
   customerId?: InputMaybe<Scalars['String']['input']>;
-  garageId?: InputMaybe<Scalars['Int']['input']>;
-  id: Scalars['Int']['input'];
-  rating?: InputMaybe<Scalars['Int']['input']>;
+  garageId?: InputMaybe<Scalars['Float']['input']>;
+  id: Scalars['Float']['input'];
+  rating?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type UpdateSlotInput = {
   displayName?: InputMaybe<Scalars['String']['input']>;
-  garageId?: InputMaybe<Scalars['Int']['input']>;
-  height?: InputMaybe<Scalars['Int']['input']>;
-  id: Scalars['Int']['input'];
-  length?: InputMaybe<Scalars['Int']['input']>;
-  pricePerHour?: InputMaybe<Scalars['Int']['input']>;
+  garageId?: InputMaybe<Scalars['Float']['input']>;
+  height?: InputMaybe<Scalars['Float']['input']>;
+  id: Scalars['Float']['input'];
+  length?: InputMaybe<Scalars['Float']['input']>;
+  pricePerHour?: InputMaybe<Scalars['Float']['input']>;
   type?: InputMaybe<SlotType>;
-  width?: InputMaybe<Scalars['Int']['input']>;
+  width?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type UpdateUserInput = {
@@ -1687,17 +1683,17 @@ export type UpdateUserInput = {
 };
 
 export type UpdateValetAssignmentInput = {
-  bookingId: Scalars['Int']['input'];
-  pickupLat?: InputMaybe<Scalars['Int']['input']>;
-  pickupLng?: InputMaybe<Scalars['Int']['input']>;
+  bookingId: Scalars['Float']['input'];
+  pickupLat?: InputMaybe<Scalars['Float']['input']>;
+  pickupLng?: InputMaybe<Scalars['Float']['input']>;
   pickupValetId?: InputMaybe<Scalars['String']['input']>;
-  returnLat?: InputMaybe<Scalars['Int']['input']>;
-  returnLng?: InputMaybe<Scalars['Int']['input']>;
+  returnLat?: InputMaybe<Scalars['Float']['input']>;
+  returnLng?: InputMaybe<Scalars['Float']['input']>;
   returnValetId?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type UpdateValetInput = {
-  companyId?: InputMaybe<Scalars['Int']['input']>;
+  companyId?: InputMaybe<Scalars['Float']['input']>;
   displayName?: InputMaybe<Scalars['String']['input']>;
   image?: InputMaybe<Scalars['String']['input']>;
   licenceID?: InputMaybe<Scalars['String']['input']>;
@@ -1705,7 +1701,7 @@ export type UpdateValetInput = {
 };
 
 export type UpdateVerificationInput = {
-  garageId: Scalars['Int']['input'];
+  garageId: Scalars['Float']['input'];
   verified?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
@@ -1764,7 +1760,7 @@ export type UserWhereUniqueInput = {
 
 export type Valet = {
   __typename?: 'Valet';
-  companyId?: Maybe<Scalars['Int']['output']>;
+  companyId?: Maybe<Scalars['Float']['output']>;
   createdAt: Scalars['DateTime']['output'];
   displayName: Scalars['String']['output'];
   image?: Maybe<Scalars['String']['output']>;
@@ -1775,14 +1771,14 @@ export type Valet = {
 
 export type ValetAssignment = {
   __typename?: 'ValetAssignment';
-  bookingId: Scalars['Int']['output'];
+  bookingId: Scalars['Float']['output'];
   createdAt: Scalars['DateTime']['output'];
-  pickupLat: Scalars['Int']['output'];
-  pickupLng: Scalars['Int']['output'];
+  pickupLat: Scalars['Float']['output'];
+  pickupLng: Scalars['Float']['output'];
   pickupValet?: Maybe<Valet>;
   pickupValetId?: Maybe<Scalars['String']['output']>;
-  returnLat?: Maybe<Scalars['Int']['output']>;
-  returnLng?: Maybe<Scalars['Int']['output']>;
+  returnLat?: Maybe<Scalars['Float']['output']>;
+  returnLng?: Maybe<Scalars['Float']['output']>;
   returnValet?: Maybe<Valet>;
   returnValetId?: Maybe<Scalars['String']['output']>;
   updatedAt: Scalars['DateTime']['output'];
@@ -1849,7 +1845,7 @@ export type ValetAssignmentWhereInput = {
 };
 
 export type ValetAssignmentWhereUniqueInput = {
-  bookingId: Scalars['Int']['input'];
+  bookingId: Scalars['Float']['input'];
 };
 
 export type ValetListRelationFilter = {
@@ -1918,7 +1914,7 @@ export type Verification = {
   __typename?: 'Verification';
   adminId: Scalars['String']['output'];
   createdAt: Scalars['DateTime']['output'];
-  garageId: Scalars['Int']['output'];
+  garageId: Scalars['Float']['output'];
   updatedAt: Scalars['DateTime']['output'];
   verified: Scalars['Boolean']['output'];
 };
@@ -1970,7 +1966,7 @@ export type VerificationWhereInput = {
 };
 
 export type VerificationWhereUniqueInput = {
-  garageId: Scalars['Int']['input'];
+  garageId: Scalars['Float']['input'];
 };
 
 export type RegisterWithCredentialsMutationVariables = Exact<{
@@ -2023,16 +2019,59 @@ export type SearchGaragesQueryVariables = Exact<{
 
 export type SearchGaragesQuery = { __typename?: 'Query', searchGarages: Array<{ __typename?: 'Garage', id: number, images: Array<string>, displayName?: string | null, address?: { __typename?: 'Address', lat: number, lng: number, address: string } | null, availableSlots: Array<{ __typename?: 'MinimalSlotGroupBy', type: SlotType, pricePerHour: number, count: number }>, verification?: { __typename?: 'Verification', verified: boolean } | null }> };
 
+export type MyCompanyQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type MyCompanyQuery = { __typename?: 'Query', myCompany: { __typename?: 'Company', id: number, createdAt: any, displayName?: string | null, garages: Array<{ __typename?: 'Garage', displayName?: string | null, id: number, description?: string | null, address?: { __typename?: 'Address', id: number, address: string, lat: number, lng: number } | null }> } };
+
+export type CreateCompanyMutationVariables = Exact<{
+  createCompanyInput: CreateCompanyInput;
+}>;
+
+
+export type CreateCompanyMutation = { __typename?: 'Mutation', createCompany: { __typename?: 'Company', id: number } };
+
+export type GaragesQueryVariables = Exact<{
+  skip?: InputMaybe<Scalars['Float']['input']>;
+  take?: InputMaybe<Scalars['Float']['input']>;
+  cursor?: InputMaybe<GarageWhereUniqueInput>;
+  orderBy?: InputMaybe<Array<GarageOrderByWithRelationInput> | GarageOrderByWithRelationInput>;
+  where?: InputMaybe<GarageWhereInput>;
+}>;
+
+
+export type GaragesQuery = { __typename?: 'Query', garages: Array<{ __typename?: 'Garage', id: number, displayName?: string | null, description?: string | null, images: Array<string>, verification?: { __typename?: 'Verification', verified: boolean } | null, address?: { __typename?: 'Address', id: number, lat: number, lng: number, address: string } | null, slotCounts: Array<{ __typename?: 'SlotTypeCount', type: SlotType, count?: number | null }> }>, garagesCount: { __typename?: 'AggregateCountOutput', count: number } };
+
+export type CreateGarageMutationVariables = Exact<{
+  createGarageInput: CreateGarageInput;
+}>;
+
+
+export type CreateGarageMutation = { __typename?: 'Mutation', createGarage: { __typename?: 'Garage', id: number } };
+
+export type CreateManySlotsMutationVariables = Exact<{
+  createSlotInput: CreateSlotInput;
+  count: Scalars['Float']['input'];
+}>;
+
+
+export type CreateManySlotsMutation = { __typename?: 'Mutation', createManySlots: { __typename?: 'ReturnCount', count: number } };
+
 export const namedOperations = {
   Query: {
     Companies: 'Companies',
     GetAuthProvider: 'GetAuthProvider',
-    SearchGarages: 'SearchGarages'
+    SearchGarages: 'SearchGarages',
+    myCompany: 'myCompany',
+    Garages: 'Garages'
   },
   Mutation: {
     RegisterWithCredentials: 'RegisterWithCredentials',
     Login: 'Login',
-    RegisterWithProvider: 'RegisterWithProvider'
+    RegisterWithProvider: 'RegisterWithProvider',
+    CreateCompany: 'CreateCompany',
+    CreateGarage: 'CreateGarage',
+    CreateManySlots: 'CreateManySlots'
   }
 }
 
@@ -2042,3 +2081,8 @@ export const LoginDocument = {"kind":"Document","definitions":[{"kind":"Operatio
 export const GetAuthProviderDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAuthProvider"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"uid"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"getAuthProvider"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"uid"},"value":{"kind":"Variable","name":{"kind":"Name","value":"uid"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"uid"}},{"kind":"Field","name":{"kind":"Name","value":"type"}}]}}]}}]} as unknown as DocumentNode<GetAuthProviderQuery, GetAuthProviderQueryVariables>;
 export const RegisterWithProviderDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"RegisterWithProvider"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"registerWithProviderInput"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"RegisterWithProviderInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"registerWithProvider"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"registerWithProviderInput"},"value":{"kind":"Variable","name":{"kind":"Name","value":"registerWithProviderInput"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"uid"}}]}}]}}]} as unknown as DocumentNode<RegisterWithProviderMutation, RegisterWithProviderMutationVariables>;
 export const SearchGaragesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"SearchGarages"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"dateFilter"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"DateFilterInput"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locationFilter"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"LocationFilterInput"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slotsFilter"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"SlotWhereInput"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"garageFilter"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"GarageFilter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"searchGarages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"dateFilter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"dateFilter"}}},{"kind":"Argument","name":{"kind":"Name","value":"locationFilter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locationFilter"}}},{"kind":"Argument","name":{"kind":"Name","value":"slotsFilter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slotsFilter"}}},{"kind":"Argument","name":{"kind":"Name","value":"garageFilter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"garageFilter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"address"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"lat"}},{"kind":"Field","name":{"kind":"Name","value":"lng"}},{"kind":"Field","name":{"kind":"Name","value":"address"}}]}},{"kind":"Field","name":{"kind":"Name","value":"images"}},{"kind":"Field","name":{"kind":"Name","value":"displayName"}},{"kind":"Field","name":{"kind":"Name","value":"availableSlots"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"dateFilter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"dateFilter"}}},{"kind":"Argument","name":{"kind":"Name","value":"slotsFilter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slotsFilter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"pricePerHour"}},{"kind":"Field","name":{"kind":"Name","value":"count"}}]}},{"kind":"Field","name":{"kind":"Name","value":"verification"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"verified"}}]}}]}}]}}]} as unknown as DocumentNode<SearchGaragesQuery, SearchGaragesQueryVariables>;
+export const MyCompanyDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"myCompany"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"myCompany"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"garages"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"displayName"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"address"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"address"}},{"kind":"Field","name":{"kind":"Name","value":"lat"}},{"kind":"Field","name":{"kind":"Name","value":"lng"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"displayName"}}]}}]}}]} as unknown as DocumentNode<MyCompanyQuery, MyCompanyQueryVariables>;
+export const CreateCompanyDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateCompany"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"createCompanyInput"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"CreateCompanyInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createCompany"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"createCompanyInput"},"value":{"kind":"Variable","name":{"kind":"Name","value":"createCompanyInput"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}}]}}]}}]} as unknown as DocumentNode<CreateCompanyMutation, CreateCompanyMutationVariables>;
+export const GaragesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Garages"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"skip"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Float"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"take"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Float"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"cursor"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"GarageWhereUniqueInput"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"orderBy"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"GarageOrderByWithRelationInput"}}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"where"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"GarageWhereInput"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"garages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"skip"},"value":{"kind":"Variable","name":{"kind":"Name","value":"skip"}}},{"kind":"Argument","name":{"kind":"Name","value":"take"},"value":{"kind":"Variable","name":{"kind":"Name","value":"take"}}},{"kind":"Argument","name":{"kind":"Name","value":"cursor"},"value":{"kind":"Variable","name":{"kind":"Name","value":"cursor"}}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"Variable","name":{"kind":"Name","value":"orderBy"}}},{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"Variable","name":{"kind":"Name","value":"where"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"displayName"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"images"}},{"kind":"Field","name":{"kind":"Name","value":"verification"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"verified"}}]}},{"kind":"Field","name":{"kind":"Name","value":"address"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"lat"}},{"kind":"Field","name":{"kind":"Name","value":"lng"}},{"kind":"Field","name":{"kind":"Name","value":"address"}}]}},{"kind":"Field","name":{"kind":"Name","value":"slotCounts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"count"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"garagesCount"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"Variable","name":{"kind":"Name","value":"where"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"count"}}]}}]}}]} as unknown as DocumentNode<GaragesQuery, GaragesQueryVariables>;
+export const CreateGarageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateGarage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"createGarageInput"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"CreateGarageInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createGarage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"createGarageInput"},"value":{"kind":"Variable","name":{"kind":"Name","value":"createGarageInput"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}}]}}]}}]} as unknown as DocumentNode<CreateGarageMutation, CreateGarageMutationVariables>;
+export const CreateManySlotsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateManySlots"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"createSlotInput"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"CreateSlotInput"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"count"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Float"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createManySlots"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"createSlotInput"},"value":{"kind":"Variable","name":{"kind":"Name","value":"createSlotInput"}}},{"kind":"Argument","name":{"kind":"Name","value":"count"},"value":{"kind":"Variable","name":{"kind":"Name","value":"count"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"count"}}]}}]}}]} as unknown as DocumentNode<CreateManySlotsMutation, CreateManySlotsMutationVariables>;

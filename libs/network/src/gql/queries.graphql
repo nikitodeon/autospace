@@ -99,80 +99,80 @@ query SearchGarages(
   }
 }
 
-# query myCompany {
-#   myCompany {
-#     id
-#     garages {
-#       displayName
-#       id
-#       description
-#       address {
-#         id
-#         address
-#         lat
-#         lng
-#       }
-#     }
-#     createdAt
-#     displayName
-#   }
-# }
+query myCompany {
+  myCompany {
+    id
+    garages {
+      displayName
+      id
+      description
+      address {
+        id
+        address
+        lat
+        lng
+      }
+    }
+    createdAt
+    displayName
+  }
+}
 
-# mutation CreateCompany($createCompanyInput: CreateCompanyInput!) {
-#   createCompany(createCompanyInput: $createCompanyInput) {
-#     id
-#   }
-# }
+mutation CreateCompany($createCompanyInput: CreateCompanyInput!) {
+  createCompany(createCompanyInput: $createCompanyInput) {
+    id
+  }
+}
 
-# query Garages(
-#   $skip: Float
-#   $take: Float
-#   $cursor: GarageWhereUniqueInput
-#   $orderBy: [GarageOrderByWithRelationInput!]
-#   $where: GarageWhereInput
-# ) {
-#   garages(
-#     skip: $skip
-#     take: $take
-#     cursor: $cursor
-#     orderBy: $orderBy
-#     where: $where
-#   ) {
-#     id
-#     displayName
-#     description
-#     images
-#     verification {
-#       verified
-#     }
-#     address {
-#       id
-#       lat
-#       lng
-#       address
-#     }
-#     slotCounts {
-#       type
-#       count
-#     }
-#   }
+query Garages(
+  $skip: Float
+  $take: Float
+  $cursor: GarageWhereUniqueInput
+  $orderBy: [GarageOrderByWithRelationInput!]
+  $where: GarageWhereInput
+) {
+  garages(
+    skip: $skip
+    take: $take
+    cursor: $cursor
+    orderBy: $orderBy
+    where: $where
+  ) {
+    id
+    displayName
+    description
+    images
+    verification {
+      verified
+    }
+    address {
+      id
+      lat
+      lng
+      address
+    }
+    slotCounts {
+      type
+      count
+    }
+  }
 
-#   garagesCount(where: $where) {
-#     count
-#   }
-# }
+  garagesCount(where: $where) {
+    count
+  }
+}
 
-# mutation CreateGarage($createGarageInput: CreateGarageInput!) {
-#   createGarage(createGarageInput: $createGarageInput) {
-#     id
-#   }
-# }
+mutation CreateGarage($createGarageInput: CreateGarageInput!) {
+  createGarage(createGarageInput: $createGarageInput) {
+    id
+  }
+}
 
-# mutation CreateManySlots($createSlotInput: CreateSlotInput!, $count: Float!) {
-#   createManySlots(createSlotInput: $createSlotInput, count: $count) {
-#     count
-#   }
-# }
+mutation CreateManySlots($createSlotInput: CreateSlotInput!, $count: Float!) {
+  createManySlots(createSlotInput: $createSlotInput, count: $count) {
+    count
+  }
+}
 
 # fragment ValetFields on Valet {
 #   image
@@ -213,29 +213,29 @@ query SearchGarages(
 #   }
 # }
 
-query BookingsForCustomer(
-  $skip: Float
-  $take: Float
-  $cursor: BookingWhereUniqueInput
-  $orderBy: [BookingOrderByWithRelationInput!]
-  $where: BookingWhereInput
-  $distinct: [BookingScalarFieldEnum!]
-) {
-  bookingsForCustomer(
-    skip: $skip
-    take: $take
-    cursor: $cursor
-    orderBy: $orderBy
-    where: $where
-    distinct: $distinct
-  ) {
-    ...BookingFields
-  }
+# query BookingsForCustomer(
+#   $skip: Float
+#   $take: Float
+#   $cursor: BookingWhereUniqueInput
+#   $orderBy: [BookingOrderByWithRelationInput!]
+#   $where: BookingWhereInput
+#   $distinct: [BookingScalarFieldEnum!]
+# ) {
+#   bookingsForCustomer(
+#     skip: $skip
+#     take: $take
+#     cursor: $cursor
+#     orderBy: $orderBy
+#     where: $where
+#     distinct: $distinct
+#   ) {
+#     ...BookingFields
+#   }
 
-  bookingsCount(where: $where) {
-    count
-  }
-}
+#   bookingsCount(where: $where) {
+#     count
+#   }
+# }
 
 # query BookingsForGarage(
 #   $skip: Float
