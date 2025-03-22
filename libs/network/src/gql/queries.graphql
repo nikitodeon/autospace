@@ -213,29 +213,29 @@ query SearchGarages(
 #   }
 # }
 
-# query BookingsForCustomer(
-#   $skip: Float
-#   $take: Float
-#   $cursor: BookingWhereUniqueInput
-#   $orderBy: [BookingOrderByWithRelationInput!]
-#   $where: BookingWhereInput
-#   $distinct: [BookingScalarFieldEnum!]
-# ) {
-#   bookingsForCustomer(
-#     skip: $skip
-#     take: $take
-#     cursor: $cursor
-#     orderBy: $orderBy
-#     where: $where
-#     distinct: $distinct
-#   ) {
-#     ...BookingFields
-#   }
+query BookingsForCustomer(
+  $skip: Float
+  $take: Float
+  $cursor: BookingWhereUniqueInput
+  $orderBy: [BookingOrderByWithRelationInput!]
+  $where: BookingWhereInput
+  $distinct: [BookingScalarFieldEnum!]
+) {
+  bookingsForCustomer(
+    skip: $skip
+    take: $take
+    cursor: $cursor
+    orderBy: $orderBy
+    where: $where
+    distinct: $distinct
+  ) {
+    ...BookingFields
+  }
 
-#   bookingsCount(where: $where) {
-#     count
-#   }
-# }
+  bookingsCount(where: $where) {
+    count
+  }
+}
 
 # query BookingsForGarage(
 #   $skip: Float

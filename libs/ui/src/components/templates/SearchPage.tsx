@@ -13,7 +13,7 @@ import { IconArrowDown } from '@tabler/icons-react'
 import { HtmlInput } from '../atoms/HtmlInput'
 import { toLocalISOString } from '@autospace/util/date'
 import { ShowGarages } from '../organisms/search/ShowGarages'
-// import { FilterSidebar } from '../organisms/search/FilterSidebar'
+import { FilterSidebar } from '../organisms/search/FilterSidebar'
 
 export const SearchPage = () => {
   const {
@@ -99,7 +99,9 @@ export const SearchPage = () => {
           })}
         </Panel>
       ) : null}
-      <Panel position="right-top">{/* <FilterSidebar /> */}</Panel>
+      <Panel position="right-top">
+        <FilterSidebar />
+      </Panel>
     </Map>
   )
 }
