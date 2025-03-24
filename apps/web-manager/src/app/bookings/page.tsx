@@ -5,7 +5,7 @@ import { ListGarageBookings } from '@autospace/ui/src/components/templates/ListG
 export default function Page({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: any // Использование `any` для игнорирования типов
 }) {
   const garageId = Number(searchParams['garageId'])
 

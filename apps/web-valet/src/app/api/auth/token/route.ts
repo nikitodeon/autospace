@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 
-export async function GET(req: NextRequest, res: NextResponse) {
+export async function GET(req: NextRequest) {
   const getCookies = await cookies()
   const isDevelopment = process.env.NODE_ENV === 'development'
 
@@ -12,5 +12,5 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
   const nextAuthSession = getCookies.get(cookieName)?.value || ''
 
-  return NextResponse.json(nextAuthSession)
+  return NextResponse.json({ session: nextAuthSession }) // Return a valid JSON response
 }

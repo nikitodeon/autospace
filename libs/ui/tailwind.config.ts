@@ -6,8 +6,6 @@ import {
   keyframesConfig,
 } from './src/styles/config'
 
-// console.log('Загружаю конфиг из libs/ui...')
-
 const config: Config = {
   important: true,
   content: ['./src/components/**/*.{js,ts,jsx,tsx}'],
@@ -29,10 +27,6 @@ const config: Config = {
       keyframes: keyframesConfig,
     },
   },
-
   plugins: [],
 }
-
-// console.log('Конфиг из libs/ui успешно загружен:', config)
-
 export default config

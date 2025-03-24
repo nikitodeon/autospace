@@ -1,4 +1,5 @@
 import colors from 'tailwindcss/colors'
+
 console.log('Загружаем конфигурацию цветов и стилей...')
 const brandHue = 52
 

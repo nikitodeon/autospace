@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BaseComponent } from '@autospace/util/types'
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'

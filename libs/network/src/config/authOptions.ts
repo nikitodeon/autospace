@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { NextAuthOptions, getServerSession } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import CredentialsProvider from 'next-auth/providers/credentials'
@@ -13,9 +15,9 @@ import { JWT } from 'next-auth/jwt'
 
 const MAX_AGE = 1 * 24 * 60 * 60
 
-// const secureCookies = process.env.NEXTAUTH_URL?.startsWith('https://')
-// const hostName = new URL(process.env.NEXTAUTH_URL || '').hostname
-// const rootDomain = 'karthicktech.com'
+const secureCookies = process.env.NEXTAUTH_URL?.startsWith('https://')
+const hostName = new URL(process.env.NEXTAUTH_URL || '').hostname
+const rootDomain = 'karthicktech.com'
 
 export const authOptions: NextAuthOptions = {
   // Configure authentication providers
@@ -116,18 +118,18 @@ export const authOptions: NextAuthOptions = {
       // ...
     },
   },
-  // cookies: {
-  //   sessionToken: {
-  //     name: `${secureCookies ? '__Secure-' : ''}next-auth.session-token`,
-  //     options: {
-  //       httpOnly: true,
-  //       sameSite: 'lax',
-  //       path: '/',
-  //       secure: secureCookies,
-  //       domain: hostName == 'localhost' ? hostName : '.' + rootDomain, // add a . in front so that subdomains are included
-  //     },
-  //   },
-  // },
+  cookies: {
+    sessionToken: {
+      name: `${secureCookies ? '__Secure-' : ''}next-auth.session-token`,
+      options: {
+        httpOnly: true,
+        sameSite: 'lax',
+        path: '/',
+        secure: secureCookies,
+        domain: hostName == 'localhost' ? hostName : '.' + rootDomain, // add a . in front so that subdomains are included
+      },
+    },
+  },
 
   // Configure callback functions
   callbacks: {

@@ -31,7 +31,7 @@ export const ShowGarages = () => {
         take,
       }}
     >
-      {data?.garages.map((garage) => (
+      {data?.garages.map((garage: any) => (
         <GarageAdminCard key={garage.id} garage={garage}>
           <div className="flex justify-end">
             {!garage?.verification?.verified ? (

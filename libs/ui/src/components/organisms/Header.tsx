@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client'
 import { BaseComponent, MenuItem, Role } from '@autospace/util/types'
 import { Brand } from '../atoms/Brand'

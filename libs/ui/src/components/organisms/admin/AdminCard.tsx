@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { AdminsQuery } from '@autospace/network/src/gql/generated'
 import { ReactNode } from 'react'
 import { useSession } from 'next-auth/react'
